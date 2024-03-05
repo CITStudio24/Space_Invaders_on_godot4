@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw8iyikwkukt2"]
+
+[ext_resource type="Texture2D" uid="uid://butgt7ybjd25y" path="res://assets/PNGs/Main Ship - Base - Full health.png" id="1_804vm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_coect"]
+radius = 13.0
+height = 26.0
+
+[node name="SpaceShip" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_804vm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_coect")
