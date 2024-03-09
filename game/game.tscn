@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://2v25w01cvkkl"]
+[gd_scene load_steps=5 format=3 uid="uid://2v25w01cvkkl"]
 
 [ext_resource type="Texture2D" uid="uid://coxldss2mj8p" path="res://assets/Space_Stars1.png" id="1_a70k2"]
 [ext_resource type="PackedScene" uid="uid://cw8iyikwkukt2" path="res://elements/spaceship/space_ship.tscn" id="2_b28mg"]
+[ext_resource type="PackedScene" uid="uid://cylr0clpdp0pa" path="res://elements/wall/wall.tscn" id="3_0sg2y"]
+[ext_resource type="PackedScene" uid="uid://55ewjvhyfdyb" path="res://elements/enemy_group/enemy_group.tscn" id="4_q1imf"]
 
 [node name="Game" type="Node2D"]
 texture_filter = 3
@@ -14,4 +16,13 @@ region_enabled = true
 region_rect = Rect2(0, 0, 256, 240)
 
 [node name="SpaceShip" parent="." instance=ExtResource("2_b28mg")]
-position = Vector2(124, 170)
+position = Vector2(123, 210)
+
+[node name="Wall" parent="." instance=ExtResource("3_0sg2y")]
+position = Vector2(1, 2)
+
+[node name="Wall2" parent="." instance=ExtResource("3_0sg2y")]
+position = Vector2(257, 1)
+
+[node name="EnemyGroup" parent="." instance=ExtResource("4_q1imf")]
+position = Vector2(-12, -3)

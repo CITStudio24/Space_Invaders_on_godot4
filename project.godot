@@ -23,3 +23,9 @@ window/size/window_width_override=1024
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
+
+[layer_names]
+
+2d_physics/layer_1="enw"
+2d_physics/layer_2="space_ship"
+2d_physics/layer_3="enemy"

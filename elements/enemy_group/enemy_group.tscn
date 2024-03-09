@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://55ewjvhyfdyb"]
+
+[ext_resource type="Script" path="res://elements/enemy_group/enemy_group.gd" id="1_uvhtx"]
+[ext_resource type="PackedScene" uid="uid://b3106yyviwu8j" path="res://elements/enemy/enemy.tscn" id="2_ext55"]
+
+[node name="EnemyGroup" type="Node2D" groups=["enemy_group"]]
+script = ExtResource("1_uvhtx")
+
+[node name="Enemy" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(40, 29)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(70, 29)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(100, 29)
+
+[node name="Enemy4" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(130, 29)
+
+[node name="Enemy5" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(160, 29)
+
+[node name="Enemy6" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(190, 29)
+
+[node name="Enemy7" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(220, 29)
+
+[node name="Enemy8" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(220, 29)
+
+[node name="Enemy9" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(56, 65)
+
+[node name="Enemy10" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(86, 65)
+
+[node name="Enemy11" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(116, 65)
+
+[node name="Enemy12" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(146, 65)
+
+[node name="Enemy13" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(176, 65)
+
+[node name="Enemy14" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(206, 65)
+
+[node name="Enemy15" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(236, 65)
+
+[node name="Enemy16" parent="." instance=ExtResource("2_ext55")]
+position = Vector2(236, 65)
+
+[node name="BlockTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

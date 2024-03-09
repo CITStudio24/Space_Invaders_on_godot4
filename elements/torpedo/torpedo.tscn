@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4g8dpjplxib3"]
+
+[ext_resource type="Texture2D" uid="uid://dpmwiclximytc" path="res://assets/Projectiles/PNGs/Kla'ed - Big Bullet.png" id="1_ahudg"]
+[ext_resource type="Script" path="res://elements/torpedo/torpedo.gd" id="1_p5cwe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ec53"]
+atlas = ExtResource("1_ahudg")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lic0"]
+atlas = ExtResource("1_ahudg")
+region = Rect2(8, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktxcl"]
+atlas = ExtResource("1_ahudg")
+region = Rect2(16, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51wdj"]
+atlas = ExtResource("1_ahudg")
+region = Rect2(24, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ag71p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ec53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lic0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktxcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51wdj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ww0c1"]
+radius = 2.0
+height = 12.0
+
+[node name="Torpedo" type="CharacterBody2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_p5cwe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_ag71p")
+autoplay = "default"
+frame_progress = 0.062473
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_ww0c1")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(1.78814e-07, 2.5)
+scale = Vector2(0.3, 0.65)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
